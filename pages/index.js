@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-// UPDATED IMPORT PATH for categories
-import { categories } from './api/quizzes/_data/mockData'; // Assuming mockData.js is now in pages/api/quizzes/_data/
+// ✅ UPDATED IMPORT PATH
+import { categories } from './api/quizzes/_data/mockData';
 
 export default function Home() {
   return (
@@ -34,32 +34,37 @@ export default function Home() {
           <p className="text-lg mt-2 drop-shadow">"परीक्षा से परिणाम तक"</p>
         </div>
 
-        {/* Grid of Categories */}
+        {/* ✅ Grid of Categories with Error Prevention */}
         <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-8 text-white max-w-5xl mx-auto">
-          {categories.map((cat) => (
-  <Link
-    key={cat.name}
-    href={`/quizzes/${encodeURIComponent(cat.name)}`}
-    prefetch={true}
-  >
-    <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg hover:bg-white/20 hover:scale-105 duration-300 ease-in-out transition cursor-pointer text-center">
-      <Image
-        src={cat.icon || '/default-icon.png'}
-        width={50}
-        height={50}
-        alt={cat.name}
-        className="mx-auto mb-3 rounded-full"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = '/default-icon.png';
-        }}
-        unoptimized
-      />
-      <h2 className="text-xl font-semibold">{cat.name}</h2>
-    </div>
-  </Link>
-))}
-
+          {Array.isArray(categories) && categories.length > 0 ? (
+            categories.map((cat) => (
+              <Link
+                key={cat.name}
+                href={`/quizzes/${encodeURIComponent(cat.name)}`}
+                prefetch={true}
+              >
+                <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg hover:bg-white/20 hover:scale-105 duration-300 ease-in-out transition cursor-pointer text-center">
+                  <Image
+                    src={cat.icon || '/default-icon.png'}
+                    width={50}
+                    height={50}
+                    alt={cat.name}
+                    className="mx-auto mb-3 rounded-full"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/default-icon.png';
+                    }}
+                    unoptimized
+                  />
+                  <h2 className="text-xl font-semibold">{cat.name}</h2>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <p className="text-white col-span-full text-center">
+              ⚠️ No categories found.
+            </p>
+          )}
         </div>
       </div>
     </>
