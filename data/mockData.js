@@ -1,4 +1,4 @@
-// File: 
+// File:
 //_data/mockData.js
 const slugify = (text) =>
   text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
@@ -35,7 +35,6 @@ const categories = [
   { name: "Education", icon: "🎓", slug: "education" },
   { name: "Environment", icon: "🌱", slug: "environment" },
   { name: "Law", icon: "⚖️", slug: "law" },
-  // Additional categories
   { name: "Mythology", icon: "🐉", slug: "mythology" },
   { name: "Board Games", icon: "🎲", slug: "board-games" },
   { name: "Video Games", icon: "🎮", slug: "video-games" },
@@ -95,7 +94,7 @@ const quizzes = {
     { id: "mu2", title: "Pop Hits", slug: "pop-hits" },
   ],
   "Movies": [
-    { id: "mo1", title: "Oscar Winners", slug: "oscar-winners" },
+    { id: "mo1", title: "Oscar Winners", slug: "oscars-winners" },
     { id: "mo2", title: "Animated Films", slug: "animated-films" },
   ],
   "Art": [
@@ -230,7 +229,7 @@ const quizDetails = {
     id: "h1",
     title: "Ancient Civilizations",
     category: "History",
-    slug: slugify("Ancient Civilizations"),
+    slug: "ancient-civilizations",
     questions: [
       {
         question: "Who built the pyramids?",
@@ -248,7 +247,7 @@ const quizDetails = {
     id: "h2",
     title: "World Wars",
     category: "History",
-    slug: slugify("World Wars"),
+    slug: "world-wars",
     questions: [
       {
         question: "World War I began in which year?",
@@ -266,7 +265,7 @@ const quizDetails = {
     id: "h3",
     title: "Modern History",
     category: "History",
-    slug: slugify("Modern History"),
+    slug: "modern-history",
     questions: [
       {
         question: "The Berlin Wall fell in which year?",
@@ -284,7 +283,7 @@ const quizDetails = {
     id: "s1",
     title: "Basic Physics",
     category: "Science",
-    slug: slugify("Basic Physics"),
+    slug: "basic-physics",
     questions: [
       {
         question: "What is the unit of force?",
@@ -302,7 +301,7 @@ const quizDetails = {
     id: "s2",
     title: "Human Biology",
     category: "Science",
-    slug: slugify("Human Biology"),
+    slug: "human-biology",
     questions: [
       {
         question: "What is the powerhouse of the cell?",
@@ -320,7 +319,7 @@ const quizDetails = {
     id: "s3",
     title: "Chemistry Basics",
     category: "Science",
-    slug: slugify("Chemistry Basics"),
+    slug: "chemistry-basics",
     questions: [
       {
         question: "What is H2O commonly known as?",
@@ -338,7 +337,7 @@ const quizDetails = {
     id: "m1",
     title: "Algebra Fundamentals",
     category: "Math",
-    slug: slugify("Algebra Fundamentals"),
+    slug: "algebra-fundamentals",
     questions: [
       {
         question: "What is the value of x in the equation 2x + 3 = 7?",
@@ -356,7 +355,7 @@ const quizDetails = {
     id: "m2",
     title: "Geometry Essentials",
     category: "Math",
-    slug: slugify("Geometry Essentials"),
+    slug: "geometry-essentials",
     questions: [
       {
         question: "How many degrees are in a triangle?",
@@ -374,7 +373,7 @@ const quizDetails = {
     id: "p1",
     title: "JavaScript Basics",
     category: "Programming",
-    slug: slugify("JavaScript Basics"),
+    slug: "javascript-basics",
     questions: [
       {
         question: "Which keyword is used to declare a variable in JavaScript?",
@@ -392,7 +391,7 @@ const quizDetails = {
     id: "p2",
     title: "Python Fundamentals",
     category: "Programming",
-    slug: slugify("Python Fundamentals"),
+    slug: "python-fundamentals",
     questions: [
       {
         question: "Which symbol is used for comments in Python?",
@@ -410,7 +409,7 @@ const quizDetails = {
     id: "g1",
     title: "World Capitals",
     category: "Geography",
-    slug: slugify("World Capitals"),
+    slug: "world-capitals",
     questions: [
       {
         question: "What is the capital of France?",
@@ -428,7 +427,7 @@ const quizDetails = {
     id: "l1",
     title: "Famous Authors",
     category: "Literature",
-    slug: slugify("Famous Authors"),
+    slug: "famous-authors",
     questions: [
       {
         question: "Who wrote 'Romeo and Juliet'?",
@@ -446,7 +445,7 @@ const quizDetails = {
     id: "g2",
     title: "Famous Mountains",
     category: "Geography",
-    slug: slugify("Famous Mountains"),
+    slug: "famous-mountains",
     questions: [
       {
         question: "Which is the highest mountain in the world?",
@@ -464,7 +463,7 @@ const quizDetails = {
     id: "l2",
     title: "Classic Novels",
     category: "Literature",
-    slug: slugify("Classic Novels"),
+    slug: "classic-novels",
     questions: [
       {
         question: "Who wrote 'Pride and Prejudice'?",
@@ -482,7 +481,7 @@ const quizDetails = {
     id: "sp1",
     title: "Olympic Games",
     category: "Sports",
-    slug: slugify("Olympic Games"),
+    slug: "olympic-games",
     questions: [
       {
         question: "In which year were the first modern Olympic Games held?",
@@ -500,7 +499,7 @@ const quizDetails = {
     id: "sp2",
     title: "Football Legends",
     category: "Sports",
-    slug: slugify("Football Legends"),
+    slug: "football-legends",
     questions: [
       {
         question: "Who is known as 'The King of Football'?",
@@ -518,7 +517,7 @@ const quizDetails = {
     id: "mu1",
     title: "Classical Composers",
     category: "Music",
-    slug: slugify("Classical Composers"),
+    slug: "classical-composers",
     questions: [
       {
         question: "Who composed the 'Fifth Symphony'?",
@@ -536,7 +535,7 @@ const quizDetails = {
     id: "mu2",
     title: "Pop Hits",
     category: "Music",
-    slug: slugify("Pop Hits"),
+    slug: "pop-hits",
     questions: [
       {
         question: "Who sang 'Thriller'?",
@@ -554,7 +553,7 @@ const quizDetails = {
     id: "mo1",
     title: "Oscar Winners",
     category: "Movies",
-    slug: slugify("Oscar Winners"),
+    slug: "oscars-winners",
     questions: [
       {
         question: "Which movie won Best Picture at the 1994 Oscars?",
@@ -572,7 +571,7 @@ const quizDetails = {
     id: "mo2",
     title: "Animated Films",
     category: "Movies",
-    slug: slugify("Animated Films"),
+    slug: "animated-films",
     questions: [
       {
         question: "Which studio produced 'Toy Story'?",
@@ -590,7 +589,7 @@ const quizDetails = {
     id: "a1",
     title: "Renaissance Art",
     category: "Art",
-    slug: slugify("Renaissance Art"),
+    slug: "renaissance-art",
     questions: [
       {
         question: "Who painted the Mona Lisa?",
@@ -608,7 +607,7 @@ const quizDetails = {
     id: "a2",
     title: "Modern Artists",
     category: "Art",
-    slug: slugify("Modern Artists"),
+    slug: "modern-artists",
     questions: [
       {
         question: "Who painted 'The Persistence of Memory'?",
@@ -626,7 +625,7 @@ const quizDetails = {
     id: "t1",
     title: "Tech Innovations",
     category: "Technology",
-    slug: slugify("Tech Innovations"),
+    slug: "tech-innovations",
     questions: [
       {
         question: "Who is known as the father of the computer?",
@@ -644,7 +643,7 @@ const quizDetails = {
     id: "b1",
     title: "Business Basics",
     category: "Business",
-    slug: slugify("Business Basics"),
+    slug: "business-basics",
     questions: [
       {
         question: "What does CEO stand for?",
@@ -662,7 +661,7 @@ const quizDetails = {
     id: "he1",
     title: "Human Body",
     category: "Health",
-    slug: slugify("Human Body"),
+    slug: "human-body",
     questions: [
       {
         question: "How many bones are in the adult human body?",
@@ -680,7 +679,7 @@ const quizDetails = {
     id: "f1",
     title: "World Cuisines",
     category: "Food",
-    slug: slugify("World Cuisines"),
+    slug: "world-cuisines",
     questions: [
       {
         question: "Sushi is a cuisine from which country?",
@@ -698,7 +697,7 @@ const quizDetails = {
     id: "tr1",
     title: "Famous Landmarks",
     category: "Travel",
-    slug: slugify("Famous Landmarks"),
+    slug: "famous-landmarks",
     questions: [
       {
         question: "Where is the Eiffel Tower located?",
@@ -716,7 +715,7 @@ const quizDetails = {
     id: "n1",
     title: "Natural Wonders",
     category: "Nature",
-    slug: slugify("Natural Wonders"),
+    slug: "natural-wonders",
     questions: [
       {
         question: "Which is the largest rainforest in the world?",
@@ -734,7 +733,7 @@ const quizDetails = {
     id: "po1",
     title: "World Leaders",
     category: "Politics",
-    slug: slugify("World Leaders"),
+    slug: "world-leaders",
     questions: [
       {
         question: "Who was the first female Prime Minister of the UK?",
@@ -752,7 +751,7 @@ const quizDetails = {
     id: "la1",
     title: "Language Origins",
     category: "Languages",
-    slug: slugify("Language Origins"),
+    slug: "language-origins",
     questions: [
       {
         question: "Which language is considered the root of the Romance languages?",
@@ -770,7 +769,7 @@ const quizDetails = {
     id: "ph1",
     title: "Famous Philosophers",
     category: "Philosophy",
-    slug: slugify("Famous Philosophers"),
+    slug: "famous-philosophers",
     questions: [
       {
         question: "Who wrote 'The Republic'?",
@@ -788,7 +787,7 @@ const quizDetails = {
     id: "fa1",
     title: "Fashion Through Ages",
     category: "Fashion",
-    slug: slugify("Fashion Through Ages"),
+    slug: "fashion-through-ages",
     questions: [
       {
         question: "Which decade is known for bell-bottom pants?",
@@ -806,7 +805,7 @@ const quizDetails = {
     id: "co1",
     title: "Comic Book Heroes",
     category: "Comics",
-    slug: slugify("Comic Book Heroes"),
+    slug: "comic-book-heroes",
     questions: [
       {
         question: "Who is Batman's alter ego?",
@@ -824,7 +823,7 @@ const quizDetails = {
     id: "an1",
     title: "Animal Kingdom",
     category: "Animals",
-    slug: slugify("Animal Kingdom"),
+    slug: "animal-kingdom",
     questions: [
       {
         question: "Which animal is the largest mammal?",
@@ -842,7 +841,7 @@ const quizDetails = {
     id: "spc1",
     title: "Solar System",
     category: "Space",
-    slug: slugify("Solar System"),
+    slug: "solar-system",
     questions: [
       {
         question: "Which planet is known as the Red Planet?",
@@ -860,7 +859,7 @@ const quizDetails = {
     id: "ec1",
     title: "Economic Terms",
     category: "Economics",
-    slug: slugify("Economic Terms"),
+    slug: "economic-terms",
     questions: [
       {
         question: "What does GDP stand for?",
@@ -878,7 +877,7 @@ const quizDetails = {
     id: "en1",
     title: "Engineering Marvels",
     category: "Engineering",
-    slug: slugify("Engineering Marvels"),
+    slug: "engineering-marvels",
     questions: [
       {
         question: "Where is the Golden Gate Bridge located?",
@@ -896,7 +895,7 @@ const quizDetails = {
     id: "ps1",
     title: "Human Mind",
     category: "Psychology",
-    slug: slugify("Human Mind"),
+    slug: "human-mind",
     questions: [
       {
         question: "Who is known as the father of psychoanalysis?",
@@ -914,7 +913,7 @@ const quizDetails = {
     id: "re1",
     title: "World Religions",
     category: "Religion",
-    slug: slugify("World Religions"),
+    slug: "world-religions",
     questions: [
       {
         question: "Which religion is based on the teachings of Jesus Christ?",
@@ -932,7 +931,7 @@ const quizDetails = {
     id: "ed1",
     title: "Education Systems",
     category: "Education",
-    slug: slugify("Education Systems"),
+    slug: "education-systems",
     questions: [
       {
         question: "Which country is known for the 'Gurukul' system?",
@@ -950,7 +949,7 @@ const quizDetails = {
     id: "env1",
     title: "Climate Change",
     category: "Environment",
-    slug: slugify("Climate Change"),
+    slug: "climate-change",
     questions: [
       {
         question: "Which gas is a major contributor to global warming?",
@@ -968,7 +967,7 @@ const quizDetails = {
     id: "lw1",
     title: "Legal Basics",
     category: "Law",
-    slug: slugify("Legal Basics"),
+    slug: "legal-basics",
     questions: [
       {
         question: "What is the supreme law of the United States?",
@@ -986,7 +985,7 @@ const quizDetails = {
     id: "my1",
     title: "Greek Myths",
     category: "Mythology",
-    slug: slugify("Greek Myths"),
+    slug: "greek-myths",
     questions: [
       {
         question: "Who is the king of the Greek gods?",
@@ -1004,7 +1003,7 @@ const quizDetails = {
     id: "bg1",
     title: "Chess Trivia",
     category: "Board Games",
-    slug: slugify("Chess Trivia"),
+    slug: "chess-trivia",
     questions: [
       {
         question: "How many squares are there on a chessboard?",
@@ -1022,7 +1021,7 @@ const quizDetails = {
     id: "vg1",
     title: "Classic Video Games",
     category: "Video Games",
-    slug: slugify("Classic Video Games"),
+    slug: "classic-video-games",
     questions: [
       {
         question: "Who is the main character in the 'Super Mario' series?",
@@ -1040,7 +1039,7 @@ const quizDetails = {
     id: "tv1",
     title: "TV Show Facts",
     category: "Television",
-    slug: slugify("TV Show Facts"),
+    slug: "tv-show-facts",
     questions: [
       {
         question: "Which TV show features the character 'Walter White'?",
@@ -1058,7 +1057,7 @@ const quizDetails = {
     id: "ct1",
     title: "Animated Series",
     category: "Cartoons",
-    slug: slugify("Animated Series"),
+    slug: "animated-series",
     questions: [
       {
         question: "Who lives in a pineapple under the sea?",
@@ -1076,16 +1075,16 @@ const quizDetails = {
     id: "au1",
     title: "Car Brands",
     category: "Automotive",
-    slug: slugify("Car Brands"),
+    slug: "car-brands",
     questions: [
       {
-        question: "Which company manufactures the Mustang?",
-        options: ["Chevrolet", "Ford", "Dodge", "Toyota"],
-        answer: "Ford",
+        question: "Which company produces the 911 sports car?",
+        options: ["Ferrari", "Porsche", "Lamborghini", "Audi"],
+        answer: "Porsche",
       },
       {
-        question: "Which country is home to the car brand 'Toyota'?",
-        options: ["USA", "Germany", "Japan", "France"],
+        question: "Which country is home to the Toyota car company?",
+        options: ["Germany", "USA", "Japan", "South Korea"],
         answer: "Japan",
       },
     ],
@@ -1094,17 +1093,17 @@ const quizDetails = {
     id: "gd1",
     title: "Plant Care",
     category: "Gardening",
-    slug: slugify("Plant Care"),
+    slug: "plant-care",
     questions: [
       {
-        question: "What do plants need for photosynthesis?",
-        options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"],
-        answer: "Carbon Dioxide",
+        question: "Which of these is essential for photosynthesis?",
+        options: ["Carbon Monoxide", "Sunlight", "Nitrogen", "Methane"],
+        answer: "Sunlight",
       },
       {
-        question: "Which tool is used for pruning plants?",
-        options: ["Shovel", "Hoe", "Pruner", "Rake"],
-        answer: "Pruner",
+        question: "What is the common name for the plant 'Helianthus annuus'?",
+        options: ["Rose", "Tulip", "Sunflower", "Daisy"],
+        answer: "Sunflower",
       },
     ],
   },
@@ -1112,17 +1111,17 @@ const quizDetails = {
     id: "pa1",
     title: "Parenting Tips",
     category: "Parenting",
-    slug: slugify("Parenting Tips"),
+    slug: "parenting-tips",
     questions: [
       {
-        question: "What is important for child development?",
-        options: ["Nutrition", "Sleep", "Play", "All of the above"],
-        answer: "All of the above",
+        question: "What is a common milestone for babies around 6-8 months?",
+        options: ["Walking", "Talking in full sentences", "Crawling", "Riding a bicycle"],
+        answer: "Crawling",
       },
       {
-        question: "Which is a positive discipline technique?",
-        options: ["Yelling", "Time-out", "Ignoring", "Spanking"],
-        answer: "Time-out",
+        question: "Which of these is important for a child's early development?",
+        options: ["Screen time", "Outdoor play", "Sugary snacks", "Isolation"],
+        answer: "Outdoor play",
       },
     ],
   },
@@ -1130,17 +1129,17 @@ const quizDetails = {
     id: "diy1",
     title: "Home Projects",
     category: "DIY",
-    slug: slugify("Home Projects"),
+    slug: "home-projects",
     questions: [
       {
-        question: "What tool is used to drive nails into wood?",
-        options: ["Screwdriver", "Hammer", "Wrench", "Pliers"],
+        question: "Which tool is best for driving nails?",
+        options: ["Screwdriver", "Wrench", "Hammer", "Pliers"],
         answer: "Hammer",
       },
       {
-        question: "Which material is commonly used for insulation?",
-        options: ["Glass", "Fiberglass", "Plastic", "Metal"],
-        answer: "Fiberglass",
+        question: "What material is commonly used for framing walls in houses?",
+        options: ["Plastic", "Wood", "Aluminum", "Copper"],
+        answer: "Wood",
       },
     ],
   },
@@ -1148,17 +1147,17 @@ const quizDetails = {
     id: "fit1",
     title: "Exercise Basics",
     category: "Fitness",
-    slug: slugify("Exercise Basics"),
+    slug: "exercise-basics",
     questions: [
       {
-        question: "Which exercise strengthens the chest muscles?",
-        options: ["Squats", "Push-ups", "Lunges", "Plank"],
-        answer: "Push-ups",
+        question: "Which of these is a cardiovascular exercise?",
+        options: ["Weightlifting", "Running", "Yoga", "Stretching"],
+        answer: "Running",
       },
       {
-        question: "How many minutes of moderate exercise are recommended per week?",
-        options: ["60", "150", "200", "300"],
-        answer: "150",
+        question: "What is the recommended daily water intake for adults (approximate)?",
+        options: ["1 liter", "2 liters", "3 liters", "4 liters"],
+        answer: "2 liters",
       },
     ],
   },
@@ -1166,16 +1165,16 @@ const quizDetails = {
     id: "phg1",
     title: "Photography 101",
     category: "Photography",
-    slug: slugify("Photography 101"),
+    slug: "photography-101",
     questions: [
       {
         question: "What does DSLR stand for?",
-        options: ["Digital Single-Lens Reflex", "Digital Standard Lens Range", "Dual Shutter Lens Reflex", "Digital Shutter Lens Reflex"],
-        answer: "Digital Single-Lens Reflex",
+        options: ["Digital Single Lens Reflex", "Direct Source Light Reflection", "Dual Sensor Lens Readout", "Data Streaming Live Recording"],
+        answer: "Digital Single Lens Reflex",
       },
       {
-        question: "Which setting controls the amount of light entering the camera?",
-        options: ["ISO", "Aperture", "Shutter Speed", "White Balance"],
+        question: "Which term refers to the amount of light entering the camera lens?",
+        options: ["Shutter Speed", "ISO", "Aperture", "White Balance"],
         answer: "Aperture",
       },
     ],
@@ -1184,16 +1183,16 @@ const quizDetails = {
     id: "poe1",
     title: "Famous Poems",
     category: "Poetry",
-    slug: slugify("Famous Poems"),
+    slug: "famous-poems",
     questions: [
       {
         question: "Who wrote 'The Raven'?",
-        options: ["Robert Frost", "Edgar Allan Poe", "Emily Dickinson", "Walt Whitman"],
+        options: ["Edgar Allan Poe", "Robert Frost", "Walt Whitman", "Emily Dickinson"],
         answer: "Edgar Allan Poe",
       },
       {
-        question: "Which poem begins 'Two roads diverged in a yellow wood'?",
-        options: ["The Road Not Taken", "Ozymandias", "Daffodils", "If—"],
+        question: "Which poem begins with 'Two roads diverged in a yellow wood'?",
+        options: ["Ozymandias", "The Road Not Taken", "Daffodils", "Stopping by Woods on a Snowy Evening"],
         answer: "The Road Not Taken",
       },
     ],
@@ -1202,17 +1201,17 @@ const quizDetails = {
     id: "ar1",
     title: "Famous Buildings",
     category: "Architecture",
-    slug: slugify("Famous Buildings"),
+    slug: "famous-buildings",
     questions: [
       {
-        question: "Where is the Taj Mahal located?",
-        options: ["India", "Pakistan", "Bangladesh", "Nepal"],
-        answer: "India",
+        question: "Which city is home to the Colosseum?",
+        options: ["Athens", "Rome", "Cairo", "Istanbul"],
+        answer: "Rome",
       },
       {
-        question: "Which building is known as the tallest in the world (as of 2024)?",
-        options: ["Shanghai Tower", "Burj Khalifa", "One World Trade Center", "Petronas Towers"],
-        answer: "Burj Khalifa",
+        question: "Who designed the Sydney Opera House?",
+        options: ["Frank Gehry", "Jørn Utzon", "Zaha Hadid", "Le Corbusier"],
+        answer: "Jørn Utzon",
       },
     ],
   },
@@ -1220,17 +1219,17 @@ const quizDetails = {
     id: "ast1",
     title: "Zodiac Signs",
     category: "Astrology",
-    slug: slugify("Zodiac Signs"),
+    slug: "zodiac-signs",
     questions: [
       {
-        question: "Which sign is represented by the lion?",
-        options: ["Leo", "Aries", "Sagittarius", "Taurus"],
-        answer: "Leo",
+        question: "Which zodiac sign is represented by the Twins?",
+        options: ["Taurus", "Gemini", "Cancer", "Leo"],
+        answer: "Gemini",
       },
       {
-        question: "How many zodiac signs are there?",
-        options: ["10", "11", "12", "13"],
-        answer: "12",
+        question: "What is the zodiac sign for someone born on December 25th?",
+        options: ["Sagittarius", "Capricorn", "Aquarius", "Pisces"],
+        answer: "Capricorn",
       },
     ],
   },
@@ -1238,17 +1237,17 @@ const quizDetails = {
     id: "fin1",
     title: "Personal Finance",
     category: "Finance",
-    slug: slugify("Personal Finance"),
+    slug: "personal-finance",
     questions: [
       {
-        question: "What is a budget?",
-        options: ["A type of loan", "A spending plan", "A bank account", "A credit card"],
-        answer: "A spending plan",
+        question: "What is the purpose of a budget?",
+        options: ["To track spending", "To limit income", "To avoid savings", "To increase debt"],
+        answer: "To track spending",
       },
       {
-        question: "Which is a form of investment?",
-        options: ["Stocks", "Savings account", "Real estate", "All of the above"],
-        answer: "All of the above",
+        question: "Which of these is a type of investment?",
+        options: ["Shopping", "Stocks", "Eating out", "Vacation"],
+        answer: "Stocks",
       },
     ],
   },
@@ -1256,17 +1255,17 @@ const quizDetails = {
     id: "med1",
     title: "Medical Discoveries",
     category: "Medicine",
-    slug: slugify("Medical Discoveries"),
+    slug: "medical-discoveries",
     questions: [
       {
         question: "Who discovered penicillin?",
-        options: ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Edward Jenner"],
+        options: ["Louis Pasteur", "Alexander Fleming", "Jonas Salk", "Marie Curie"],
         answer: "Alexander Fleming",
       },
       {
-        question: "What is the study of the heart called?",
-        options: ["Neurology", "Cardiology", "Dermatology", "Oncology"],
-        answer: "Cardiology",
+        question: "What is the purpose of a vaccine?",
+        options: ["To treat existing illness", "To prevent disease", "To diagnose conditions", "To enhance digestion"],
+        answer: "To prevent disease",
       },
     ],
   },
@@ -1274,17 +1273,17 @@ const quizDetails = {
     id: "cr1",
     title: "Craft Ideas",
     category: "Crafts",
-    slug: slugify("Craft Ideas"),
+    slug: "craft-ideas",
     questions: [
       {
-        question: "Which material is commonly used in origami?",
-        options: ["Plastic", "Paper", "Wood", "Metal"],
-        answer: "Paper",
+        question: "What is origami?",
+        options: ["The art of paper folding", "The art of pottery", "The art of weaving", "The art of painting"],
+        answer: "The art of paper folding",
       },
       {
-        question: "What is the art of making objects from clay called?",
-        options: ["Pottery", "Weaving", "Knitting", "Embroidery"],
-        answer: "Pottery",
+        question: "Which material is commonly used for knitting?",
+        options: ["Wood", "Metal", "Yarn", "Plastic"],
+        answer: "Yarn",
       },
     ],
   },
@@ -1292,17 +1291,17 @@ const quizDetails = {
     id: "pet1",
     title: "Pet Care",
     category: "Pets",
-    slug: slugify("Pet Care"),
+    slug: "pet-care",
     questions: [
       {
-        question: "Which animal is known as man's best friend?",
-        options: ["Cat", "Dog", "Rabbit", "Parrot"],
-        answer: "Dog",
+        question: "Which of these foods is toxic to dogs?",
+        options: ["Carrots", "Apples", "Chocolate", "Chicken"],
+        answer: "Chocolate",
       },
       {
-        question: "What do cats use their whiskers for?",
-        options: ["Hearing", "Balance", "Sensing surroundings", "Smelling"],
-        answer: "Sensing surroundings",
+        question: "What is a common sign of a healthy cat?",
+        options: ["Dull coat", "Excessive shedding", "Clear eyes", "Lethargy"],
+        answer: "Clear eyes",
       },
     ],
   },
@@ -1310,17 +1309,17 @@ const quizDetails = {
     id: "adv1",
     title: "Adventure Sports",
     category: "Adventure",
-    slug: slugify("Adventure Sports"),
+    slug: "adventure-sports",
     questions: [
       {
-        question: "Which sport involves jumping from an aircraft with a parachute?",
-        options: ["Bungee Jumping", "Skydiving", "Paragliding", "Hang Gliding"],
-        answer: "Skydiving",
+        question: "Which sport involves descending a rock face using ropes?",
+        options: ["Hiking", "Rock Climbing", "Kayaking", "Cycling"],
+        answer: "Rock Climbing",
       },
       {
-        question: "Which river is famous for white-water rafting in the USA?",
-        options: ["Mississippi", "Colorado", "Amazon", "Nile"],
-        answer: "Colorado",
+        question: "What is white-water rafting?",
+        options: ["Rafting on calm rivers", "Rafting on snowy mountains", "Rafting on rapids", "Rafting in a pool"],
+        answer: "Rafting on rapids",
       },
     ],
   },
@@ -1328,20 +1327,19 @@ const quizDetails = {
     id: "hb1",
     title: "Popular Hobbies",
     category: "Hobbies",
-    slug: slugify("Popular Hobbies"),
+    slug: "popular-hobbies",
     questions: [
       {
         question: "Which hobby involves collecting stamps?",
-        options: ["Philately", "Numismatics", "Origami", "Calligraphy"],
+        options: ["Numismatics", "Philately", "Deltiology", "Lepidopterology"],
         answer: "Philately",
       },
       {
-        question: "What is the hobby of growing and caring for plants called?",
-        options: ["Gardening", "Painting", "Cooking", "Knitting"],
-        answer: "Gardening",
+        question: "What is scrapbooking?",
+        options: ["Collecting old books", "Creating decorative albums for photos", "Recycling paper", "Writing short stories"],
+        answer: "Creating decorative albums for photos",
       },
     ],
   },
 };
-
 export { categories, quizzes, quizDetails };

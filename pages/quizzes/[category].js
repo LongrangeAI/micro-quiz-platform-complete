@@ -4,13 +4,19 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Breadcrumb from '../../components/Breadcrumb.js'; // ✅ UPDATED IMPORT PATH
-import { quizzes, categories } from '../../data/mockData.js'; // ✅ UPDATED IMPORT PATH
+import Breadcrumb from '../../components/Breadcrumb';
+import { quizzes, categories } from '../../data/mockData';
 
-export async function getServerSideProps(context) {
-  const { category } = context.params;
+export async function getStaticPaths() {
+  const paths = categories.map(cat => ({
+    params: { category: cat.slug }, // we are routing by slug
+  }));
+  return { paths, fallback: false };
+}
 
-  // Find the category object by slug
+export async function getStaticProps({ params }) {
+  const { category } = params;
+
   const categoryObj = categories.find(cat => cat.slug === category);
   const categoryName = categoryObj ? categoryObj.name : null;
   const categoryQuizzes = categoryName ? quizzes[categoryName] || [] : [];
@@ -48,12 +54,10 @@ export default function CategoryPage({ categoryQuizzes, categoryName }) {
             <ul className="grid gap-4 sm:grid-cols-2">
               {quizzes.map((q) => (
                 <li key={q.id}>
-                  <Link href={`/quiz/${q.id}`} legacyBehavior>
-                    <a>
-                      <div className="p-5 bg-white/10 rounded-lg hover:bg-white/20 cursor-pointer transition shadow">
-                        <h2 className="text-xl font-semibold">{q.title}</h2>
-                      </div>
-                    </a>
+                  <Link href={`/quiz/${q.id}`}>
+                    <div className="p-5 bg-white/10 rounded-lg hover:bg-white/20 cursor-pointer transition shadow">
+                      <h2 className="text-xl font-semibold">{q.title}</h2>
+                    </div>
                   </Link>
                 </li>
               ))}
