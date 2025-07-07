@@ -4,38 +4,23 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Breadcrumb from '../../components/Breadcrumb';
+import Breadcrumb from '../../components/Breadcrumb.js'; // ✅ UPDATED IMPORT PATH
+import { quizzes, categories } from '../../data/mockData.js'; // ✅ UPDATED IMPORT PATH
 
 export async function getServerSideProps(context) {
   const { category } = context.params;
 
-  const apiBase = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  // Find the category object by slug
+  const categoryObj = categories.find(cat => cat.slug === category);
+  const categoryName = categoryObj ? categoryObj.name : null;
+  const categoryQuizzes = categoryName ? quizzes[categoryName] || [] : [];
 
-  try {
-    const res = await fetch(
-      `${apiBase}/api/quizzes/getQuizzesByCategory?category=${encodeURIComponent(category)}`
-    );
-    const data = await res.json();
-
-    if (!res.ok) {
-      return { notFound: true };
-    }
-
-    return {
-      props: {
-        categoryQuizzes: data,
-        categoryName: category,
-      },
-    };
-  } catch (error) {
-    console.error(`❌ Error fetching quizzes for category: ${category}`, error);
-    return {
-      props: {
-        categoryQuizzes: [],
-        categoryName: category,
-      },
-    };
-  }
+  return {
+    props: {
+      categoryQuizzes,
+      categoryName: categoryName || category,
+    },
+  };
 }
 
 export default function CategoryPage({ categoryQuizzes, categoryName }) {
@@ -83,17 +68,7 @@ export default function CategoryPage({ categoryQuizzes, categoryName }) {
         </div>
       </main>
 
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar />
     </>
   );
 }

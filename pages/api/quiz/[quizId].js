@@ -1,5 +1,6 @@
-// File: pages/api/quiz/[quizId].js (ensure these logs are 
-import { quizzes, quizDetails } from '../quizzes/_data/mockData'; // This is the correct path for this file!
+// File: pages/api/quiz/[quizId].js
+import { quizDetails } from '../../../data/mockData.js'; // Import the quiz details from mockData.js
+
 
 export default function handler(req, res) {
   const { quizId } = req.query; 

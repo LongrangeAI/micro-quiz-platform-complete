@@ -1,6 +1,8 @@
 // File: pages/api/quizzes/getQuizzesByCategory.js
 
-import { quizzes } from './_data/mockData';
+
+import { quizzes } from '../../../data/mockData.js';
+// Import quizzes mock data from the correct path
 
 export default function handler(req, res) {
   if (req.method !== 'GET') {

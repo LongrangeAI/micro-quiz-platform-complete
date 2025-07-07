@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Breadcrumb from '../../components/Breadcrumb';
+import Breadcrumb from '../../components/Breadcrumb.js';
 
 export default function QuizPage({ initialQuiz, quizId }) {
   const [quiz, setQuiz] = useState(initialQuiz);
