@@ -1,33 +1,35 @@
-import { useState, useEffect } from 'react';
+// File: pages/quiz/[quizId].js
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { quizDetails } from '../../data/mockData';
+import Breadcrumb from '../../components/Breadcrumb';
 
-import Breadcrumb from '../../components/Breadcrumb.js';
+export async function getStaticPaths() {
+  const paths = Object.keys(quizDetails).map((id) => ({
+    params: { quizId: id },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const quiz = quizDetails[params.quizId] || null;
+
+  return {
+    props: {
+      initialQuiz: quiz,
+      quizId: params.quizId,
+    },
+  };
+}
 
 export default function QuizPage({ initialQuiz, quizId }) {
   const [quiz, setQuiz] = useState(initialQuiz);
-  const [loading, setLoading] = useState(!initialQuiz);
   const [userAnswers, setUserAnswers] = useState({});
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-
-  useEffect(() => {
-    if (!quiz) {
-      setLoading(true);
-      fetch(`/api/quiz/${quizId}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setQuiz(data);
-          setLoading(false);
-        })
-        .catch(() => {
-          toast.error('❌ Failed to load quiz.');
-          setLoading(false);
-        });
-    }
-  }, [quiz, quizId]);
 
   const handleOptionClick = (qIndex, option) => {
     if (userAnswers[qIndex] !== undefined) return;
@@ -46,17 +48,9 @@ export default function QuizPage({ initialQuiz, quizId }) {
     }
   };
 
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-        <p className="text-xl animate-pulse">Loading quiz...</p>
-      </main>
-    );
-  }
-
   if (!quiz) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <main className="min-h-screen flex items-center justify-center bg-black text-white">
         <p className="text-xl text-red-400">❌ Quiz not found.</p>
       </main>
     );
@@ -132,38 +126,4 @@ export default function QuizPage({ initialQuiz, quizId }) {
       <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar />
     </>
   );
-}
-
-// Server-side fetch
-export async function getServerSideProps(context) {
-  const { quizId } = context.params;
-
-  try {
-    const protocol = context.req?.headers['x-forwarded-proto'] || 'http';
-    const host = context.req?.headers.host;
-    const baseUrl = host ? `${protocol}://${host}` : '';
-    const apiUrl = `${baseUrl}/api/quiz/${quizId}`;
-
-    const res = await fetch(apiUrl);
-    const data = await res.json();
-
-    if (!res.ok) {
-      return { notFound: true };
-    }
-
-    return {
-      props: {
-        initialQuiz: data,
-        quizId,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching quiz:', error);
-    return {
-      props: {
-        initialQuiz: null,
-        quizId,
-      },
-    };
-  }
 }

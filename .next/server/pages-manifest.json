@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/quizzes/[category]": "pages/quizzes/[category].js",
-  "/quiz/[quizId]": "pages/quiz/[quizId].js",
-  "/api/quiz/[quizId]": "pages/api/quiz/[quizId].js"
+  "/quiz/[quizId]": "pages/quiz/[quizId].js"
 }
